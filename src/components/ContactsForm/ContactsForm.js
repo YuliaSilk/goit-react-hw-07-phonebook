@@ -2,10 +2,9 @@ import { Formik } from "formik";
 import * as Yup from 'yup';
 import { AddBtn, FormName, FormStyle, FormField, ErrMsg, FormContainer } from "./ContactsForm.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts } from "redux/selectors";
+import { selectContacts } from "redux/selectors";
 import Notiflix from "notiflix";
-import { addContacts } from "redux/contactSlice";
-import { nanoid } from "nanoid";
+import { addContact } from "redux/operations";
 
 const FormSchema = Yup.object().shape({
     name: Yup.string()
@@ -22,7 +21,7 @@ const FormSchema = Yup.object().shape({
 
   export const ContactForm = () => {
     const dispatch = useDispatch();
-    const contacts = useSelector(getContacts);
+    const contacts = useSelector(selectContacts);
 
     return (
      <Formik
@@ -35,8 +34,8 @@ const FormSchema = Yup.object().shape({
           if (contacts.find(contact => contact.name === values.name.trim())) {
             Notiflix.Notify.failure('This contact has already been added!');
           } else {
-            dispatch(addContacts({
-              id: nanoid(),
+            dispatch(addContact({
+              id: '',
               name: values.name.trim(),
               number: values.number.trim(),
             }))

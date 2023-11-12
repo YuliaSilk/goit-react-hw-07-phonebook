@@ -1,13 +1,13 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { FilterInputStyle, FilterStyle, TextToDo } from './Filter.styled'
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from 'redux/selectors';
+import { selectFilter } from 'redux/selectors';
 import { onChangeFilter } from 'redux/filterSlice';
 
 const contactId = nanoid();
 
 export const Filter = () => {
-    const value = useSelector(getFilter);
+    const value = useSelector(selectFilter);
     const dispatch = useDispatch();
 
     const onChange = (evt) => {

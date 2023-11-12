@@ -7,11 +7,11 @@ import { ContactHeaderStyle, ContactsContainer, PhonebookContainer } from "./Con
 import { FormTittle } from "./ContactsForm/ContactsForm.styled";
 // import Notiflix from 'notiflix';
 import { useSelector } from "react-redux";
-import { getContacts } from "redux/selectors";
+import { selectContacts } from "redux/selectors";
 
 
 export const App = () => {
-  const contacts = useSelector(getContacts)
+  const contacts = useSelector(selectContacts)
 
   return (
     <PhonebookContainer>
