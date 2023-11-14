@@ -49,9 +49,9 @@ const contactsSlise = createSlice ({
         [deleteContact.fulfilled](state, action){
             state.isLoading = false;
             state.error = null;
-            // state.contacts = state.contacts.filter((contact) => contact.id !== action.payload);
-            const index = state.contacts.findIndex(task => task.id === action.payload);
-            state.contacts.splice(index, 1);
+            state.contacts = state.contacts.filter((contact) => contact.id !== action.payload.id);
+            // const index = state.contacts.findIndex(task => task.id === action.payload);
+            // state.contacts.splice(index, 1);
         },
         [deleteContact.rejected](state, action){
             state.isLoading = false;

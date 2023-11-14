@@ -5,7 +5,7 @@ export const ContactItem = styled.li`
   justify-content: space-between;
   padding-left: 8px;
   gap: 16px;
-  width: 360px;
+  width: 460px;
   font-size: 16px;
   border-radius: 15px;
   color: ${({ theme }) => theme.colors.text};
@@ -13,6 +13,8 @@ export const ContactItem = styled.li`
     background: ${({ theme }) => theme.colors.inputColor}
   }
 `;
+
+
 
 export const DeleteBtn = styled.button`
 cursor: pointer;
@@ -33,7 +35,8 @@ width: 100px;
 `;
 
 export const ContactHeaderStyle = styled.h2`
-font-size: 32px;
+font-size: 42px;
+font-weight: 200;
 margin: 0;
 margin-top: 16px;
 color:${({ theme }) => theme.colors.header};
@@ -41,13 +44,14 @@ color:${({ theme }) => theme.colors.header};
 
 export const ContactsContainer = styled.div`
 display: flex;
-width: 360px;
+max-width: 600px;
 flex-direction: column;
 gap: 8px;
+/* margin: 0 auto; */
 `;
 
 export const PhonebookContainer = styled.div`
-width: 400px;
+width: 500px;
 padding: 20px;
 background-color: ${({ theme }) => theme.colors.backgraund};
 border-radius: 15px;

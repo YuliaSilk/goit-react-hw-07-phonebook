@@ -11,14 +11,11 @@ export const ContactList = () => {
         <ContactContainer>
             <ContactsList>
                 {visibleContacts.map(contact => 
-                   
                    <Contact
                     key={contact.id}
                     contact={contact}
-                  
                     />
-                    )}
-                   
+                    )}   
             </ContactsList>
         </ContactContainer>
     );

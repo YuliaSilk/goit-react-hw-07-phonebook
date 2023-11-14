@@ -11,9 +11,9 @@ gap: 10px;
 `;
 
 export const FormTittle = styled.h2`
-font-size: 42px;
+font-size: 62px;
 width: 400px;
-font-wight: 200;
+font-weight: 200;
 color: ${({ theme }) => theme.colors.header};
 margin: 0;
 margin-bottom: 12px;

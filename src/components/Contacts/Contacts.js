@@ -3,7 +3,7 @@ import { ContactItem, DeleteBtn } from "./Contacts.styled"
 import { deleteContact } from "redux/operations";
 
 
-export const Contact = ({ contact: { id, name, number } }) => {
+export const Contact = ({ contact: { id, name, phone } }) => {
     const dispatch = useDispatch();
     const toDeleteContact = contactId => {
         dispatch(deleteContact(contactId));
@@ -11,7 +11,7 @@ export const Contact = ({ contact: { id, name, number } }) => {
 }
 return (
     <ContactItem>
-        <p>{name}: {number}</p>
+        <p>{name}: {phone}</p>
         <DeleteBtn type="button" 
         onClick={() => toDeleteContact(id)}>
             Delete

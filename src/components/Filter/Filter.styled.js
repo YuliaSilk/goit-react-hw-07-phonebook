@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FilterStyle = styled.div`
 display: flex;
 flex-direction: column;
-gap: 8px;
+gap: 12px;
 `
 export const TextToDo = styled.p`
 color: ${({ theme }) => theme.colors.acent};

@@ -13,7 +13,7 @@ const FormSchema = Yup.object().shape({
     .max(15, 'Too long contacts name!')
     .required('Required'),
 
-    number: Yup.string()
+    phone: Yup.string()
     .matches(/^\+?\d{1,4}([ ./-]?\d{1,3})?([ ./-]?\d{1,4})+$/, 'Invalid phone number format')
     .required('Required'),
   });
@@ -27,7 +27,7 @@ const FormSchema = Yup.object().shape({
      <Formik
         initialValues={{
           name: '',
-          number: '',
+          phone: '',
         }}
         validationSchema={FormSchema}
         onSubmit={(values, actions) => {
@@ -37,7 +37,7 @@ const FormSchema = Yup.object().shape({
             dispatch(addContact({
               id: '',
               name: values.name.trim(),
-              number: values.number.trim(),
+              phone: values.phone.trim(),
             }))
           };
           Notiflix.Notify.success('The contact succefully added!');
@@ -54,8 +54,8 @@ const FormSchema = Yup.object().shape({
           <ErrMsg component="div" name="name" />
         </FormName>
         <FormName>Phone number
-          <FormField name="number" placeholder="Enter phone number" type="tel"/>
-          <ErrMsg component="div" name="number" />
+          <FormField name="phone" placeholder="Enter phone number" type="tel"/>
+          <ErrMsg component="div" name="phone" />
         </FormName>
 
         <AddBtn type="submit">Add contact</AddBtn>

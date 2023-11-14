@@ -6,12 +6,19 @@ import { ContactList } from "./ContactsList/ContactsList";
 import { ContactHeaderStyle, ContactsContainer, PhonebookContainer } from "./Contacts/Contacts.styled";
 import { FormTittle } from "./ContactsForm/ContactsForm.styled";
 // import Notiflix from 'notiflix';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "redux/selectors";
+import { useEffect } from "react";
+import { fetchContacts } from "redux/operations";
 
 
 export const App = () => {
-  const contacts = useSelector(selectContacts)
+  const contacts = useSelector(selectContacts);
+  const dispatch = useDispatch();
+useEffect(() => {
+  dispatch(fetchContacts())
+}, [dispatch])
+
 
   return (
     <PhonebookContainer>

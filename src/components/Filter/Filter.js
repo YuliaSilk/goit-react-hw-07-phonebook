@@ -1,10 +1,12 @@
-import { nanoid } from '@reduxjs/toolkit';
+// import { nanoid } from '@reduxjs/toolkit';
 import { FilterInputStyle, FilterStyle, TextToDo } from './Filter.styled'
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/selectors';
 import { onChangeFilter } from 'redux/filterSlice';
 
-const contactId = nanoid();
+// const contactId = nanoid();
+// const contactId = contacts.id;
+
 
 export const Filter = () => {
     const value = useSelector(selectFilter);
@@ -19,7 +21,6 @@ export const Filter = () => {
           <TextToDo>Find contacts by name</TextToDo>
             <FilterInputStyle
             type="text"
-            id={contactId}
             value={value}
             placeholder="Please, enter a name"
             onChange={onChange}
